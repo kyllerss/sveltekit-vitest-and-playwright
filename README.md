@@ -1,4 +1,13 @@
-# Project creation steps
+# Update [RESOLVED]
+The bug was reported [https://github.com/sveltejs/kit/issues/5429](here) and subsequently fixed.
+
+The latest commit contains the fix.
+
+# Original Report
+
+Here is the original bug report.
+
+## Project creation steps
 
 This project shows the issues currently surrounding having both `vitest` and `playwright` configured for the same project.
 
@@ -10,7 +19,7 @@ $ npm install
 $ npx @preset/cli davipon/svelte-add-vitest --ts --msw --example
 ```
 
-# Config changes
+## Config changes
 I have added changes to [vite.config.js](vite.config.js) and [playwright.config.js](playwright.config.ts) to segragate the test directories each will use. 
 
 I have also made changes to [package.json](package.json) to add a couple of run targets for e2e and unit tests:
@@ -27,10 +36,10 @@ I have also made changes to [package.json](package.json) to add a couple of run 
     ...
 ```
 
-# Tests
+## Tests
 I have created two test directories: `tests/unit` and `tests/e2e` that each hold one reference test. 
 
-# Errors
+## Errors
 When running both unit and e2e tests, `playwright` times out:
 
 ```bash
